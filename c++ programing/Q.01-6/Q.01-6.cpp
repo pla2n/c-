@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <cstring>
 using std::cout;
 using std::cin;
 using std::endl;
@@ -11,24 +12,51 @@ void withdraw();
 void printall();
 void quit();
 
-typedef struct
+class Account
 {
+private:
     int AccID;
-    char name[20];
+    char* name;
     int balance;
-} Account;
+public:
+    Account(int AccID, char* name, int balance) :AccID(AccID), balance(balance)
+    {
+        this->name = new char[strlen(name) + 1];
+        strcpy(this->name, name);
+    }
+    int getID() {return AccID;}
+    void deposit(int money) {
+        balance += money;
+    }
+    void withdraw(int money) {
+        if (balance > money) {
+            balance -= money;
+            cout << "출금완료" << endl;
+        }
+        else
+            cout << "잔액부족" << endl;
+    }
 
-Account acc[100];
+    void showinfo() {
+        cout << endl;
+        cout << "계좌ID: " << AccID << endl;
+        cout << "이름: " << name << endl;
+        cout << "잔액: " << balance << endl;
+    }
+};
+
+Account *acc[100];
 int count = 0;
 
 int main()
 {
     int choice;
-    while (true)
+    while (1)
     {
         menu();
         cout << "선택: ";
         cin >> choice;
+        cout << endl;
         switch (choice)
         {
         case 1:
@@ -44,14 +72,17 @@ int main()
             printall();
             break;
         case 5:
+            for (int i = 0; i < count; i++)
+                delete acc[i];
             return 0;
+        default:
+            cout << "No you can't" << endl;
         }
     }
 }
 
 void menu()
 {
-    cout << endl;
     cout << "-----Menu-----" << endl;
     cout << "1. 계좌개설" << endl;
     cout << "2. 입금" << endl;
@@ -62,20 +93,20 @@ void menu()
 
 void makeAcc()
 {
-    cout << endl;
+    int accid, balance;
+    char name[20];
     cout << "[계좌개설]" << endl;
     cout << "계좌ID: ";
-    cin >> acc[count].AccID;
+    cin >> accid;
     cout << "이름: ";
-    cin >> acc[count].name;
+    cin >> name;
     cout << "입금액: ";
-    cin >> acc[count].balance;
-    count++;
+    cin >> balance;
+    acc[count++] = new Account(accid, name, balance);
 }
 void deposit()
 {
     int id, deposit;
-    cout << endl;
     cout << "[입  금]" << endl;
     cout << "계좌ID: ";
     cin >> id;
@@ -83,8 +114,8 @@ void deposit()
     cin >> deposit;
 
     for (int i = 0; i < count; i++) {
-        if (acc[i].AccID == id) {
-            acc[i].balance += deposit;
+        if (acc[i]->getID() == id) {
+            acc[i]->deposit(deposit);
             cout << "입금완료" << endl;
             return;
         }
@@ -94,7 +125,6 @@ void deposit()
 void withdraw()
 {
     int id, withdraw;
-    cout << endl;
     cout << "[출  금]" << endl;
     cout << "계좌ID: ";
     cin >> id;
@@ -102,26 +132,13 @@ void withdraw()
     cin >> withdraw;
 
     for (int i = 0; i < count; i++) {
-        if (acc[i].AccID == id) {
-            if (acc[i].balance >= withdraw) {
-                acc[i].balance -= withdraw;
-                cout << "출금완료" << endl;
-                return;
-            }
-            else {
-                cout << "잔액부족" << endl;
-                return;
-            }
-        }
+        if (acc[i]->getID() == id)
+            acc[i]->withdraw(withdraw);
     }
     cout << "일치하는 ID가 없습니다." << endl;
 }
 void printall()
 {
-    for (int i = 0; i < count; i++) {
-        cout << endl;
-        cout << "계좌ID: " << acc[i].AccID << endl;
-        cout << "이름: " << acc[i].name << endl;
-        cout << "잔액: " << acc[i].balance << endl;
-    }
+    for (int i = 0; i < count; i++)
+        acc[i]->showinfo();
 }
