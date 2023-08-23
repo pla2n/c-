@@ -24,6 +24,11 @@ public:
         this->name = new char[strlen(name) + 1];
         strcpy(this->name, name);
     }
+    Account(const Account & copy) :AccID(copy.AccID), balance(copy.balance)
+    {
+        name-> new char[strlen(copy.name) + 1];
+        strcpy(name, copy.name);
+    }
     int getID() {return AccID;}
     void deposit(int money) {
         balance += money;
@@ -42,6 +47,10 @@ public:
         cout << "계좌ID: " << AccID << endl;
         cout << "이름: " << name << endl;
         cout << "잔액: " << balance << endl;
+    }
+    ~Account()
+    {
+        delete[]name;
     }
 };
 

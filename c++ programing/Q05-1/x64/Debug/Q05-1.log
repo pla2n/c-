@@ -1,0 +1,8 @@
+﻿  Q05-1.cpp
+D:\coding\c++\c++ programing\Q05-1\Q05-1.cpp(41,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\coding\c++\c++ programing\Q05-1\Q05-1.cpp(42,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\coding\c++\c++ programing\Q05-1\Q05-1.cpp(43,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\coding\c++\c++ programing\Q05-1\Q05-1.cpp(51,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\coding\c++\c++ programing\Q05-1\Q05-1.cpp(52,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\coding\c++\c++ programing\Q05-1\Q05-1.cpp(53,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Q05-1.vcxproj -> D:\coding\c++\c++ programing\Q05-1\x64\Debug\Q05-1.exe
