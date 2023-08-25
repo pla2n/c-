@@ -1,0 +1,5 @@
+﻿  Q07-1-2.cpp
+D:\coding\c++\c++ programing\Q07-1-2\Q07-1-2.cpp(15,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\coding\c++\c++ programing\Q07-1-2\Q07-1-2.cpp(37,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\coding\c++\c++ programing\Q07-1-2\Q07-1-2.cpp(39,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Q07-1-2.vcxproj -> D:\coding\c++\c++ programing\Q07-1-2\x64\Debug\Q07-1-2.exe
