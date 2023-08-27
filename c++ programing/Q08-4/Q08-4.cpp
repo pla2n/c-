@@ -29,9 +29,7 @@ public:
     int getbalance() const { return balance; }
 
     int getID() const { return AccID; }
-    void deposit(int money) {
-        balance += money;
-    }
+    virtual void deposit(int money);
     void withdraw(int money) {
         if (balance > money) {
             balance -= money;
@@ -54,6 +52,10 @@ public:
     }
 };
 
+void Account::deposit(int money) {
+    balance += money;
+}
+
 class NormalAccount: public Account
 {
 private:
@@ -64,7 +66,7 @@ public:
     virtual void deposit(int money)
     {
         Account::deposit(money);
-        Account::deposit(money * (interest / 100));
+        Account::deposit(money * (interest / 100.0));
     }
 };
 
@@ -79,7 +81,7 @@ public:
     virtual void deposit(int money)
     {
         NormalAccount::deposit(money);
-        Account::deposit(money * (grade / 100));
+        Account::deposit(money * (grade / 100.0));
     }
 };
 
@@ -131,7 +133,7 @@ public:
         cin >> name;
         cout << "입금액: ";
         cin >> balance;
-        cout << "이자율: " << endl;
+        cout << "이자율: ";
         cin >> interest;
         acc[count++] = new NormalAccount(id, name, balance, interest);
     }
@@ -154,10 +156,13 @@ public:
         {
         case 1:
             acc[count++] = new HighCreditAccount(id, name, balance, interest, LEVEL_A);
+            break;
         case 2:
             acc[count++] = new HighCreditAccount(id, name, balance, interest, LEVEL_B);
+            break;
         case 3:
             acc[count++] = new HighCreditAccount(id, name, balance, interest, LEVEL_C);
+            break;
         }
     }
 
