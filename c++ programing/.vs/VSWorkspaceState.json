@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\2",
-    "\\ConsoleApplication1"
+    "\\ConsoleApplication1",
+    "\\CPP_Src (『윤성우의 열혈 C++ 프로그래밍』 소스코드)",
+    "\\CPP_Src (『윤성우의 열혈 C++ 프로그래밍』 소스코드)\\Chapter 8 source",
+    "\\Q08-1"
   ],
-  "SelectedNode": "\\2\\2.cpp",
+  "SelectedNode": "\\CPP_Src (『윤성우의 열혈 C++ 프로그래밍』 소스코드)\\Chapter 8 source\\EmployeeManager4.cpp",
   "PreviewInSolutionExplorer": true
 }
