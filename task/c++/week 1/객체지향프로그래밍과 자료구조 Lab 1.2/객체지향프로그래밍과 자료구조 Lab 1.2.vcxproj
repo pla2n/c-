@@ -24,6 +24,7 @@
     <ProjectGuid>{3c00cfe5-42c5-49d7-9fe4-43573190d19d}</ProjectGuid>
     <RootNamespace>객체지향프로그래밍과자료구조Lab12</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Lab01_22012276_이세용</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Student.cpp" />
-    <ClCompile Include="객체지향프로그래밍과 자료구조 Lab 1.2.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h" />
